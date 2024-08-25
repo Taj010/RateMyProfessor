@@ -1,0 +1,124 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. Emily Johnson",
+        "subject": "Biology",
+        "stars": 4,
+        "reviews": "Dr. Johnson's lectures are engaging and informative. She really knows how to break down complex concepts."
+      },
+      {
+        "professor": "Prof. Michael Chen",
+        "subject": "Computer Science",
+        "stars": 5,
+        "reviews": "Brilliant professor! His passion for coding is contagious. Challenging but rewarding classes."
+      },
+      {
+        "professor": "Dr. Sarah Williams",
+        "subject": "Psychology",
+        "stars": 3,
+        "reviews": "Interesting material, but sometimes the pace is too fast. Office hours are helpful."
+      },
+      {
+        "professor": "Prof. Robert Taylor",
+        "subject": "History",
+        "stars": 4,
+        "reviews": "Prof. Taylor brings history to life with his storytelling. Assignments can be tough but fair."
+      },
+      {
+        "professor": "Dr. Lisa Martinez",
+        "subject": "Chemistry",
+        "stars": 5,
+        "reviews": "Best chemistry professor I've had. Clear explanations and fun lab experiments."
+      },
+      {
+        "professor": "Prof. David Wilson",
+        "subject": "Mathematics",
+        "stars": 2,
+        "reviews": "Lectures are confusing and he goes too fast. Textbook is essential for understanding."
+      },
+      {
+        "professor": "Dr. Amanda Brown",
+        "subject": "English Literature",
+        "stars": 4,
+        "reviews": "Dr. Brown's analysis of classic literature is insightful. Be prepared for lots of reading."
+      },
+      {
+        "professor": "Prof. James Lee",
+        "subject": "Physics",
+        "stars": 3,
+        "reviews": "Knowledgeable but sometimes struggles to explain complex concepts. Homework is challenging."
+      },
+      {
+        "professor": "Dr. Rachel Green",
+        "subject": "Environmental Science",
+        "stars": 5,
+        "reviews": "Passionate about the subject and incorporates current events. Field trips are a highlight."
+      },
+      {
+        "professor": "Prof. Thomas Moore",
+        "subject": "Philosophy",
+        "stars": 4,
+        "reviews": "Thought-provoking lectures and discussions. Prof. Moore really makes you question your assumptions."
+      },
+      {
+        "professor": "Dr. Jessica Patel",
+        "subject": "Sociology",
+        "stars": 3,
+        "reviews": "Interesting course content but lectures can be dry. Group projects are hit or miss."
+      },
+      {
+        "professor": "Prof. Daniel Kim",
+        "subject": "Economics",
+        "stars": 5,
+        "reviews": "Explains complex economic theories in relatable ways. Always available for extra help."
+      },
+      {
+        "professor": "Dr. Laura Thompson",
+        "subject": "Art History",
+        "stars": 4,
+        "reviews": "Passionate about art and it shows in her teaching. Museum visits are a great addition to the course."
+      },
+      {
+        "professor": "Prof. Steven Garcia",
+        "subject": "Political Science",
+        "stars": 2,
+        "reviews": "Seems biased in his lectures. Grading can be inconsistent and unclear."
+      },
+      {
+        "professor": "Dr. Michelle Wong",
+        "subject": "Neuroscience",
+        "stars": 5,
+        "reviews": "Cutting-edge research incorporated into lectures. Challenging but extremely rewarding course."
+      },
+      {
+        "professor": "Prof. Christopher Adams",
+        "subject": "Music Theory",
+        "stars": 4,
+        "reviews": "Makes music theory accessible even for non-musicians. Patient and encouraging."
+      },
+      {
+        "professor": "Dr. Elizabeth Carter",
+        "subject": "Anthropology",
+        "stars": 3,
+        "reviews": "Fascinating subject matter but the workload can be overwhelming at times."
+      },
+      {
+        "professor": "Prof. Andrew Ross",
+        "subject": "Marketing",
+        "stars": 4,
+        "reviews": "Great real-world examples and case studies. Group projects are actually useful."
+      },
+      {
+        "professor": "Dr. Olivia Sanchez",
+        "subject": "Linguistics",
+        "stars": 5,
+        "reviews": "Dr. Sanchez's enthusiasm for language is infectious. Challenging but incredibly interesting course."
+      },
+      {
+        "professor": "Prof. Richard Evans",
+        "subject": "Mechanical Engineering",
+        "stars": 3,
+        "reviews": "Solid understanding of the subject but can be unapproachable. Lab work is the best part of the course."
+      }
+    ]
+  }

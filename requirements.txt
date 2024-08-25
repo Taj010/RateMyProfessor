@@ -1,0 +1,16 @@
+# JavaScript/Next.js Dependencies (npm)
+@mui/material
+@emotion/react
+@emotion/styled
+@pinecone-database/pinecone
+@vercel/analytics
+openai
+next
+react
+react-dom
+
+# Python Dependencies (pip)
+openai
+pinecone-client
+google-generativeai==0.7.2
+
