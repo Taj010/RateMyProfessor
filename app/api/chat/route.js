@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Pinecone } from "@pinecone-database/pinecone";
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // NOTE: Use google ai here
 import OpenAI from "openai";
@@ -86,34 +87,31 @@ export async function POST(req) {
     })
 
     const index = pc.index("rag").namespace("ns1")
-
+    const fs = require("fs");
+    const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
     //NOTE: Maybe needs a different model here. create embeddings -- based on video
-    const openai = new OpenAI()
+    const model = genAI.getGenerativeModel({ model: "text-embedding-004"});
     const text = data[data.length - 1].content
-    const embedding = await OpenAI.Embeddings.create({
-        model: 'text-embedding-3-small',
-        input: text,
-        encoding_format: 'float',
-    })
-
+    const result = await model.embedContent(text);
+    const embedding = result.embedding;
     //query our embeddings from pinecone index -- our vector database
     const results = await index.query({
-        topK : 3,
+        topK : 5,
         includeMetadata: true,
         //this access to embedding might change if you decide to use different LLM model
-        vector: embedding.data[0].embedding
+        vector: embedding.values
     })
 
     //generate result with embeddings
-    let resultString = '\n\nReturned results from vector db (done automatically): '
+    let resultString = ''
     results.matches.forEach((match) => {
-        resultString += `\n
-        Professor: ${match.id}
-        Review: ${match.metadata.stars}
-        Subject: ${match.metadata.subject}
-        Stars: ${match.metadata.stars}
-        \n\n
-        `
+        resultString += `
+            Returned Results:
+            Professor: ${match.id}
+            Review: ${match.metadata.stars}
+            Subject: ${match.metadata.subject}
+            Stars: ${match.metadata.stars}
+            \n\n`
     })
 
     const lastMessage = data[data.length - 1]
@@ -121,18 +119,22 @@ export async function POST(req) {
     const lastDataWithoutLastMessage = data.slice(0, data.length - 1)
     
     //NOTE: Maybe needs a different model here. this might change. basically the thing where you sent messages for open router api to give you response
-    const completion = await openai.chat.completions.create({
-        messages: [
+    const openai = new OpenAI({
+        baseURL: "https://openrouter.ai/api/v1",
+        apiKey: process.env.OPENROUTER_API_KEY,
+        
+      })
+        const completion = await openai.chat.completions.create({
+          model: "meta-llama/llama-3.1-8b-instruct:free",
+          messages: [
             {role: 'system', content: systemPrompt},
-            ...lastDataWithoutLastMessage,
-            {role: 'user', content: lastMessageContent}
-        ],
-        model: 'gpt-4o-mini',
-        stream: true,
-    })
-
+            {role: 'user', content: lastMessageContent},
+            ...lastDataWithoutLastMessage
+          ],
+          stream: true,
+        })
     //if there is stream
-    const stream = ReadableStream({
+    const stream = new ReadableStream({
         async start(controller) {
             const encoder = new TextEncoder()
             try {
